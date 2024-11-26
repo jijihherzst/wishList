@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- imported some fonts cause i love DynaPuff hehe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <title>Wish List</title>
+  </head>
+  <body>
+    <style>
+      /* just learned this */
+      :root {
+        --brown: #543310;
+        --medium-brown: #74512d;
+        --light-brown: #af8f6f;
+        --caramel: #f8f4e1;
+      }
+      li,
+      button,
+      input {
+        cursor: pointer;
+      }
+      * {
+        font-family: 'DynaPuff', serif;
+        cursor: default;
+      }
+      body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--brown);
+      }
+      li {
+        list-style: none;
+      }
+      .achieved {
+        color: rgb(71, 71, 71);
+        text-decoration: line-through;
+      }
+      main {
+        width: 60%;
+        max-width: 400px;
+        margin-top: 10%;
+        background-color: var(--caramel);
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+      }
+      h1 {
+        padding: 10px;
+        margin-top: 0;
+        color: var(--brown);
+        border-bottom: 3px solid var(--brown);
+        border-left: 3px solid var(--brown);
+        border-radius: 20px;
+      }
+      input {
+        font-size: 15px;
+        padding: 10px 20px;
+        border: 1px solid var(--brown);
+        border-radius: 20px;
+        color: var(--brown);
+      }
+      button {
+        height: fit-content;
+        margin-left: 10px;
+        width: fit-content;
+        padding: 10px 20px;
+        background-color: var(--brown);
+        color: var(--caramel);
+        border-radius: 20px;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--brown);
+        width: 100%;
+        padding-bottom: 20px;
+        margin: 0;
+      }
+      section.head {
+        display: flex;
+        flex-direction: row;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+      }
+      h4 {
+        margin-bottom: 0;
+        font-size: 20px;
+        color: var(--brown);
+      }
+      p {
+        margin: 0;
+        font-size: 10px;
+        color: var(--medium-brown);
+      }
+      li {
+        width: 90%;
+        text-align: center;
+        padding: 10px 20px;
+        border: 1px solid var(--brown);
+        border-radius: 20px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        cursor: pointer;
+      }
+      li:hover {
+        background-color: var(--brown);
+        color: var(--caramel);
+      }
+    </style>
+    <main>
+      <h1>Wish List</h1>
+
+      <section class="head">
+        <input id="wish" type="text" placeholder="Add wish..." />
+        <button id="add-btn">Add Wish</button>
+      </section>
+      <section>
+        <h4>Wishes</h4>
+        <p>Click the Items to Mark it as Achieved</p>
+        <ul id="wishes"></ul>
+      </section>
+      <section>
+        <h4>Achieved</h4>
+        <p>Click the Items to Delete it</p>
+
+        <ul id="achievedWish"></ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
